@@ -1,2 +1,2 @@
-# news-explorer-frontend
-Для открытия попапов необходимо убрать display: none из класса .popup и закомментить\раскомментить соотетствующий попап в коде. Cсылки на страницы на github.pages: https://gimark00.github.io/news-explorer-frontend/save_page.html и https://gimark00.github.io/news-explorer-frontend/index.html
+# news-explorer-js
+Cсылки на страницы на github.pages: https://gimark00.github.io/news-explorer-js/save_page.html и https://gimark00.github.io/news-explorer-js/index.html
