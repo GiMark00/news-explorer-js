@@ -1,0 +1,27 @@
+.footer__image {
+    margin-left: 28px;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    border: none;
+    outline: none;
+    background-color: transparent;
+    transition: opacity ease 1s;
+}
+
+.footer__image:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+@media screen and (min-width: 760px) and (max-width: 1430px) {
+    .footer__image {
+        margin-left: 27px;
+    }
+}
+
+@media screen and (min-width: 310px) and (max-width: 760px) {
+    .footer__image {
+        margin-left: 18px;
+    }
+}

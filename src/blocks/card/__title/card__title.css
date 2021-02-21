@@ -1,0 +1,28 @@
+.card__title {
+    width: 100%;
+    max-height: 60px;
+    overflow: hidden;
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 30px;
+    color: #1A1B22;
+    margin-top: 12px;
+}
+
+@media screen and (min-width: 760px) and (max-width: 1430px) {
+    .card__title {
+        font-size: 22px;
+        line-height: 24px;
+        max-height: 72px;
+    }
+}
+
+@media screen and (min-width: 310px) and (max-width: 760px) {
+    .card__title {
+        font-size: 22px;
+        line-height: 28px;
+        max-height: 52px;
+    }
+}

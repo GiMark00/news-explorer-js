@@ -1,0 +1,17 @@
+@import url(./__circle/preloader__circle.css);
+
+.preloader {
+	position: relative;
+	height: 282px;
+	width: 100%;
+	max-width: 1440px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #333;
+}
+
+
+.preloader_none {
+  display: none;
+}
+

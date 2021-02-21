@@ -1,0 +1,28 @@
+.footer__copyrights {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    height: 22px;
+    margin-top: 32px;
+    margin-bottom: 26px;
+    text-align: left;
+    color: #B6BCBF;
+
+}
+
+@media screen and (min-width: 760px) and (max-width: 1430px) {
+    .footer__copyrights {
+        margin-top: 24px;
+        margin-bottom: 18px;
+    }
+}
+
+@media screen and (min-width: 310px) and (max-width: 760px) {
+    .footer__copyrights {
+        margin-top: 38px;
+        margin-bottom: 18px;
+
+    }
+}

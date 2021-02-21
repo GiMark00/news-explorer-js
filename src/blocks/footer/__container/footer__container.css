@@ -1,0 +1,30 @@
+.footer__container {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer__container_small {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0px;
+
+}
+
+@media screen and (min-width: 760px) and (max-width: 1430px) {
+    .footer__container_small {
+        margin-top: 0px;
+    }
+}
+
+@media screen and (min-width: 310px) and (max-width: 760px) {
+    .footer__container_small {
+        flex-direction: column;
+        max-height: 74px;
+        margin-top: 0px;
+
+        
+    }
+}
+
+
+  

@@ -1,0 +1,17 @@
+.header_line{
+    height: 100%;
+    background-image: url(../../../images/vector.svg);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+
+    
+}
+
+.header_line-black{
+    height: 100%;
+    background-image: url(../../../images/vector_black.svg);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}

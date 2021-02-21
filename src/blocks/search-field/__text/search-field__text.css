@@ -1,0 +1,38 @@
+@import url(./_button/search-field__text_button.css);
+
+.search-field__text {
+  display: flex;
+  font-size: 16px;
+  line-height: 22px;
+  color: #B6BCBF; 
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 24px;
+  text-align: left;
+  border: none;
+  outline: none;
+  
+
+  width: 376px;
+  background-color: white;
+  border-radius: 100px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.search-field__text:focus {
+  color: #000000;
+}
+
+@media screen and (min-width: 310px) and (max-width: 760px) {
+  .search-field__text {
+    height: 56px;
+    width: 288px;
+    flex-direction: column;
+    background-color: white;
+    margin-left: 0px;
+
+    text-indent: 16px;
+  }
+}

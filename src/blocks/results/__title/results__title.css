@@ -1,0 +1,26 @@
+.results__title {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 46px;
+    color: #1A1B22;
+    margin-top: 131px;
+
+}
+
+@media screen and (min-width: 760px) and (max-width: 1430px) {
+    .results__title {
+        font-size: 30px;
+        line-height: 40px;
+        margin-top: 40px;
+    }
+}
+
+@media screen and (min-width: 310px) and (max-width: 760px) {
+    .results__title {
+        font-size: 30px;
+        line-height: 34px;
+        margin-top: 40px;
+    }
+}

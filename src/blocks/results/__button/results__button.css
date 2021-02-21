@@ -1,0 +1,53 @@
+.results__button {
+    width: 288px;
+    height: 64px;
+    border-radius: 80px;
+    background-color: #FFFFFF;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 64px;
+    margin-bottom: 80px;
+ 
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1A1B22;
+    text-align: center;
+
+    border: none;
+    outline: none;
+
+    transition: opacity ease 1s;
+}
+
+.results__button:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.results__button:active {
+    opacity: 1.0;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 760px) and (max-width: 1430px) {
+    .results__button {
+        width: 240px;
+        height: 56px;
+        margin-bottom: 40px;
+        margin-top: 32px;
+    }
+}
+
+@media screen and (min-width: 310px) and (max-width: 760px) {
+    .results__button {
+        width: 288px;
+        height: 56px;
+        margin-bottom: 32px;
+        margin-top: 15px;
+    }
+}
+

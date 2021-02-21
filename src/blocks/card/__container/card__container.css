@@ -1,0 +1,17 @@
+.card__container {
+    width: 352px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media screen and (min-width: 760px) and (max-width: 1430px) {
+    .card__container {
+        width: 192px;
+    }
+}
+
+@media screen and (min-width: 310px) and (max-width: 760px) {
+    .card__container {
+        width: 256px;
+    }
+}

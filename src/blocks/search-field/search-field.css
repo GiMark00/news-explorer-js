@@ -1,0 +1,40 @@
+@import url(./__text/search-field__text.css);
+@import url(./__more/search-field__more.css);
+@import url(./__container/search-field__container.css);
+
+.search-field {
+  height: 64px;
+  width: 608px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 64px;
+  margin-bottom: 80px;
+  background-color: white;
+  border-radius: 100px;
+
+}
+
+@media screen and (min-width: 760px) and (max-width: 1430px) {
+  .search-field {
+    height: 56px;
+    width: 448px;
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+  
+}
+
+@media screen and (min-width: 310px) and (max-width: 760px) {
+  .search-field {
+    height: auto;
+    width: 288px;
+    margin-top: 122px;
+    margin-bottom: 32px;
+    flex-direction: column;
+    background-color: transparent;
+  }
+}

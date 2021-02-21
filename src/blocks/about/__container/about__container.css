@@ -1,0 +1,25 @@
+.about__container {
+    width: auto;
+    margin-right: 216px;
+    margin-left: 56px;
+
+}
+
+@media screen and (min-width: 760px) and (max-width: 1430px) {
+    .about__container {
+        width: auto;
+        margin-right: 40px;
+        margin-left: 32px;
+
+    }
+}
+
+@media screen and (min-width: 310px) and (max-width: 760px) {
+    .about__container {
+        width: calc(100% - 32px);
+        max-width: 424px;
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+}

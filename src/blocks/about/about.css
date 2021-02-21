@@ -1,0 +1,24 @@
+@import url(__title/about__title.css);
+@import url(__subtitle/about__subtitle.css);
+@import url(__avatar/about__avatar.css);
+@import url(__container/about__container.css);
+
+.about {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    max-width: 1440px;
+    width: 100%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: left;
+
+}
+
+@media screen and (min-width: 310px) and (max-width: 760px) {
+    .about {
+        flex-direction: column;
+
+    }
+}

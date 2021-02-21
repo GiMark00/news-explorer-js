@@ -1,0 +1,16 @@
+.not-found__text{
+    width: 356px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    /* or 133% */
+
+    text-align: center;
+    color: #B6BCBF;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+}

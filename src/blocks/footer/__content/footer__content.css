@@ -1,0 +1,26 @@
+.footer__content {
+  width: calc(100% - 208px);
+  max-width: 1232px;
+  background-color: white;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: auto;
+  margin-left: auto;
+
+  
+}
+
+@media screen and (min-width: 760px) and (max-width: 1430px) {
+  .footer__content {
+    width: calc(100% - 80px);
+  }
+}
+
+@media screen and (min-width: 310px) and (max-width: 760px) {
+  .footer__content {
+      width: calc(100% - 32px);
+      flex-direction: column-reverse;
+  }
+}

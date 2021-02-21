@@ -1,0 +1,33 @@
+.world__title{
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 60px;
+    line-height: 64px;
+    color: #ffffff;
+    width: 608px;
+    text-align: left;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+
+}
+
+@media screen and (min-width: 760px) and (max-width: 1430px) {
+    .world__title {
+        width: 385px;
+        font-size: 36px;
+        line-height: 40px;
+        margin-top: 38px;
+    }
+}
+
+@media screen and (min-width: 310px) and (max-width: 760px) {
+    .world__title {
+        width: 285px;
+        font-size: 36px;
+        line-height: 40px;
+        margin-top: 30px;
+    }
+}

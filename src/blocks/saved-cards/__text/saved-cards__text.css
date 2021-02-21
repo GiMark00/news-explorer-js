@@ -1,0 +1,24 @@
+.saved-cards__text{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: rgba(26, 27, 34, 0.5);
+
+    margin-top: 40px;
+}
+
+@media screen and (min-width: 760px) and (max-width: 1430px) {
+    .saved-cards__text {
+        margin-top: 24px;
+        font-size: 14px;
+    }   
+}
+
+@media screen and (min-width: 310px) and (max-width: 760px) {
+    .saved-cards__text {
+        margin-top: 8px;
+        font-size: 12px;
+    }   
+}

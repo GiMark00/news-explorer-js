@@ -1,0 +1,32 @@
+.card__flag {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: #FFFFFF;
+    border: none;
+    outline: none;
+    background-image: url(../../../images/flag.svg);
+    background-repeat: no-repeat;
+    background-size: 14px 19px;
+    background-position: center;
+    transition: background-color ease 1s;
+}
+
+.card__flag_blue {
+    background-image: url(../../../images/flag_blue.svg);
+}
+
+.card__flag:hover {
+    background-color: lightgray;
+}
+
+@media screen and (min-width: 760px) and (max-width: 1430px) {
+    .card__flag {
+        top: 8px;
+        right: 8px;
+        
+    }
+}

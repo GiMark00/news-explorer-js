@@ -1,0 +1,9 @@
+.header__main {
+    height: 80px;
+    max-width: 1440px;
+    width: 100%;
+    box-shadow: inset 0px -1px 0px #D1D2D6;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+}

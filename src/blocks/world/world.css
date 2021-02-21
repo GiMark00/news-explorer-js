@@ -1,0 +1,12 @@
+@import url(./__title/world__title.css);
+@import url(./__subtitle/world__subtitle.css);
+
+.world {
+    width: 100%;
+    max-width: 1440px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+

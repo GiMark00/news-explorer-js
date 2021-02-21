@@ -1,0 +1,27 @@
+@import url(./__subtitle/saved-cards__subtitle.css);
+@import url(./__text/saved-cards__text.css);
+@import url(./__title/saved-cards__title.css);
+
+.saved-cards {
+    max-width: 1232px;
+    width: calc(100% - 208px);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+@media screen and (min-width: 760px) and (max-width: 1430px) {
+    .saved-cards {
+        width: calc(100% - 80px);
+    }   
+}
+
+@media screen and (min-width: 310px) and (max-width: 760px) {
+    .saved-cards {
+        width: calc(100% - 32px);
+    }   
+}

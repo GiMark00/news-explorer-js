@@ -1,0 +1,33 @@
+.footer__text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: left;
+    color: #1A1B22;
+    margin-left: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    transition: opacity ease 1s;
+
+    text-decoration: none;
+    
+}
+
+.footer__text:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+@media screen and (min-width: 310px) and (max-width: 760px) {
+    .footer__text {
+        line-height: 48px;
+        margin-top: 0px;
+    }
+  }

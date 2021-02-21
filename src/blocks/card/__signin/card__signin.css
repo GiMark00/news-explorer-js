@@ -1,0 +1,42 @@
+.card__signin {
+    position: absolute;
+    top: 24px;
+    right: 69px;
+    width: 182px;
+    height: 40px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+
+    opacity: 0;
+    transition: opacity  ease 1s;
+}
+
+.card__signin_text {
+  margin: auto;
+
+}
+
+.card__signin_visible {
+  opacity: 1;
+}
+
+@media screen and (min-width: 760px) and (max-width: 1430px) {
+    .card__signin {
+        top: 8px;
+        right: 52px;
+
+        width: 142px;
+        font-size: 8px;
+
+    }
+}

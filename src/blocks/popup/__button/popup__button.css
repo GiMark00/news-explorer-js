@@ -1,0 +1,33 @@
+.popup__button {
+  width: 360px;
+  height: 64px;
+  border-radius: 100px;
+  margin-top: 39px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #B6BCBF;
+  background: #E6E8EB;
+
+  border: none;
+  outline: none;
+  
+}
+
+.popup__button_active {
+  color: white;
+  background: #2F71E5;
+}
+
+
+
+@media screen and (min-width: 310px) and (max-width: 760px) {
+  .popup__button {
+    width: 288px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

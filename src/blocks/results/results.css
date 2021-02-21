@@ -1,0 +1,18 @@
+@import url(./__container/results__container.css);
+@import url(./__button/results__button.css);
+@import url(./__main/results__main.css);
+@import url(./__title/results__title.css);
+
+.results {
+    width: 100%;
+    max-width: 1440px;
+    height: auto;
+    background-color: #F5F6F7;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.results_none {
+  display: none;
+}
+

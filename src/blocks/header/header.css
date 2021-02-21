@@ -1,0 +1,47 @@
+@import url(__content/header__content.css);
+@import url(__text/header__text.css);
+@import url(__container/header__container.css);
+@import url(__signin/header__signin.css);
+@import url(__menu/header__menu.css);
+@import url(__rectangle/header__rectangle.css);
+@import url(__main/header__main.css);
+@import url(_black/header_black.css);
+@import url(_line/header_line.css);
+
+.header {
+  height: auto;
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+
+  flex-direction: column;
+  background-image: url(../../images/georgia.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+
+}
+
+.header_white {
+  background-image: none;
+  background-color: #FFFFFF;
+}
+
+.header_none{
+  display: none;
+}
+
+@media screen and (min-width: 310px) and (max-width: 760px) {
+  #login {
+      display: none;
+  }
+}
+
+@media screen and (min-width: 310px) and (max-width: 760px) {
+  #main_page {
+      display: none;
+  }
+}
