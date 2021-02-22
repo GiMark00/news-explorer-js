@@ -5,10 +5,13 @@ import NewsCardList from './js/components/NewsCardList'
 import NewsCard from './js/components/NewsCard'
 import MainApi from "./js/api/MainApi";
 import NewsApi from "./js/api/NewsApi";
+import from from "./js/constants/Date";
 
 
 
 const placesList = document.querySelector('.results__container');
+
+const showMore = document.querySelector('.results__button');
 
 const closeForm = document.querySelector('.popup__close');
 const popupForm = document.querySelector('.popup__form');
@@ -41,15 +44,6 @@ const signinEmailUser = formSignin.elements.signin__email;
 const signinPasswordUser = formSignin.elements.signin__password;
 
 
-let date = new Date();
-let dd = String(date.getDate()).padStart(2, '0');
-let mm = String(date.getMonth() + 1).padStart(2, '0');
-let yyyy = date.getFullYear();
-
-let today = yyyy + '-' + mm + '-' + dd;
-let from = yyyy + '-' + mm + '-' + (dd - 7);
-
-
 const userApi = new MainApi({
     url:`https://api.gooseface.students.nomoreparties.space`
 });
@@ -58,7 +52,6 @@ const newsApi = new NewsApi({
   url:`https://nomoreparties.co/news/`,
   apiKey: 'd50fa49a7d074db38d0a434cf01763bb',
   from: from,
-  to: today,
   pageSize: 100,
 });
 
@@ -118,7 +111,6 @@ closeForm.addEventListener("click", () => {
 findButton.addEventListener("click", () => {
   placesList.querySelectorAll('*').forEach(n => n.remove());
   newsList.renderResults(findField.value)
-
 });
 
 
@@ -161,6 +153,10 @@ logoutButton.addEventListener("click", () => {
   savedPage.classList.toggle('header_none');
   loginButton.classList.toggle('header_none');
   logoutButton.classList.toggle('header_none');
+});
+
+showMore.addEventListener("click", () => {
+  newsList.showMore();
 });
 
 userApi.autoSignin();

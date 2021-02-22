@@ -1,7 +1,7 @@
 .results__container {
     width: 100%;
     max-width: 1232px;
-    height: auto;
+    height: 600px;
     flex-wrap: wrap;
     display: flex;
     flex-direction: row;
@@ -10,17 +10,22 @@
     margin-right: auto;
     margin-top: 64px;
 
+    overflow: hidden;
+
 }
+
 
 @media screen and (min-width: 760px) and (max-width: 1430px) {
     .results__container {
         margin-top: 32px;
+        height: 450px;
     }
 }
 
 @media screen and (min-width: 310px) and (max-width: 760px) {
     .results__container {
         margin-top: 24px;
+        height: 1600px;
 
     }
 }

@@ -13,17 +13,23 @@ export default class NewsCardList {
 
 
   renderResults(words){
+    this.container.classList.remove('results__container_more');
     this.removeContainer();
+    this.removeNotFound();
     this.renderLoader();
     this.api.getNews(words)
     .then((res)=>{
-      res.articles.forEach((source) => {
-        this.addCard(source.publishedAt, source.title, source.description, source.source.name, source.urlToImage)
-      })
-    })
-    .then(() => {
-      this.renderLoader();
-      this.addContainer();
+      console.log(res.articles.length);
+      if (res.articles.length === 0){
+        this.renderLoader();
+        this.addNotFound();
+      } else {
+        res.articles.forEach((source) => {
+          this.addCard(source.publishedAt, source.title, source.description, source.source.name, source.urlToImage)
+        })
+        this.renderLoader();
+        this.addContainer();
+      }
     })
     .catch(err => {
       this.renderLoader();
@@ -37,6 +43,16 @@ export default class NewsCardList {
     loader.classList.toggle('preloader_none');
   }
 
+  addNotFound(){
+    const notFound = document.querySelector('.not-found');
+    notFound.classList.remove('not-found_none');
+  }
+
+  removeNotFound(){
+    const notFound = document.querySelector('.not-found');
+    notFound.classList.add('not-found_none');
+  }
+
   addContainer(){
     const results = document.querySelector('.results');
     results.classList.remove('results_none');
@@ -48,7 +64,7 @@ export default class NewsCardList {
   }
 
   showMore(){
-
+    this.container.classList.add('results__container_more');
   }
 
 
