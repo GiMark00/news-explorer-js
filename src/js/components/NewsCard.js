@@ -1,13 +1,17 @@
 export default class NewsCard {
 
-  constructor(date, title, text, source, link, template) {
+  constructor(date, title, text, source, imageLink, cardUrl, cardId, template, api) {
     this.title = title;
-    this.link = link;
+    this.imageLink = imageLink;
     this.text = text;
     this.date = date;
     this.source = source;
+    this.cardUrl = cardUrl;
+    this.cardId = cardId;
 
     this.template = template;
+    this.api = api;
+
   }
 
   renderIcon() {
@@ -19,12 +23,12 @@ export default class NewsCard {
     const cardDate = card.querySelector('.card__date');
     const cardSource = card.querySelector('.card__source');
 
-
     cardTitle.textContent = this.title;
     cardText.textContent = this.text;
     cardDate.textContent = this.date;
     cardSource.textContent = this.source;
-    cardImage.src = this.link;
+    cardImage.src = this.imageLink;
+    cardTitle.id = this.cardId;
 
     this.cardElement = card;
     this.addListeners();
@@ -33,6 +37,7 @@ export default class NewsCard {
 
   addListeners() {
     this.cardElement.querySelector('.card__flag').addEventListener('click', this.cardAdd);
+    this.cardElement.querySelector('.card__delete').addEventListener('click', this.cardDelete);
     this.cardElement.querySelector('.card__image').addEventListener('mouseover', this.cardOpacity);
     this.cardElement.querySelector('.card__image').addEventListener('mouseout', this.cardOpacity);
   }
@@ -51,6 +56,27 @@ export default class NewsCard {
   cardAdd = (event) => {
     if (localStorage.getItem('email') != "" && localStorage.getItem('password') != "") {
       event.target.classList.toggle('card__flag_blue');
+      this.api.createArticle(
+        this.cardElement.querySelector('.card__text').textContent,
+        this.cardElement.querySelector('.card__title').textContent,
+        this.cardElement.querySelector('.card__text').textContent,
+        this.cardElement.querySelector('.card__date').textContent,
+        this.cardElement.querySelector('.card__source').textContent,
+        this.cardElement.querySelector('.card__image').src,
+        this.cardElement.querySelector('.card__image').src
+      );
+
+    }
+  }
+
+  cardDelete = () => {
+    if (localStorage.getItem('email') != "" && localStorage.getItem('password') != "") {
+      this.api.removeArticle(this.cardElement.querySelector('.card__title').id);
+      this.cardElement.querySelector('.card__flag').removeEventListener('click', this.cardAdd);
+      this.cardElement.querySelector('.card__delete').removeEventListener('click', this.cardDelete);
+      this.cardElement.querySelector('.card__image').removeEventListener('mouseover', this.cardOpacity);
+      this.cardElement.querySelector('.card__image').removeEventListener('mouseout', this.cardOpacity);
+      this.cardElement.remove();
     }
   }
 

@@ -7,6 +7,7 @@
 @import url(__flag/card__flag.css);
 @import url(__type/card__type.css);
 @import url(__signin/card__signin.css);
+@import url(__delete/card__delete.css);
 
 .card {
     width: 400px;
@@ -17,6 +18,10 @@
     background-color: white;
     margin-bottom: 16px;
     position: relative;
+}
+
+.card_none{
+  display: none;
 }
 
 @media screen and (min-width: 760px) and (max-width: 1430px) {

@@ -29,7 +29,7 @@ const findButton = document.querySelector('.search-field__text_button');
 
 const loginButton = document.querySelector('#login');
 const logoutButton = document.querySelector('#logout');
-const savedPage = document.querySelector('#saved_page');
+const savedPage = document.querySelector('#save_page');
 
 const template = document.querySelector('.template').content;
 
@@ -64,8 +64,8 @@ const popupSuccess = new Popup(popupSuccessWindow,'popup_is-opened');
 
 
 
-const createCard = (date, title, text, source, link) => {
-  const newsCard = new NewsCard(date, title, text, source, link, template);
+const createCard = (date, title, text, source, link, url, id) => {
+  const newsCard = new NewsCard(date, title, text, source, link, url, id, template, userApi);
   return newsCard.renderIcon();
 }
 
@@ -104,7 +104,6 @@ closeForm.addEventListener("click", () => {
   sendFormRegistration.setSubmitButtonState(false);
   sendFormSignin.setSubmitButtonState(false);
 });
-
 
 
 

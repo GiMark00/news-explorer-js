@@ -15,8 +15,12 @@
         <div class="header__content">
           <h1 class="header__text_head">NewsExplorer</h1>
           <div class="header__container">
-            <button class="header__text header_line" id="main_page">Главная</button>
-            <button class="header__text header_none" id="saved_page">Сохранённые статьи</button>
+            <div class="header__link header_line">
+              <a class="header__text" id="main_page" href="./index.html">Главная</a>
+            </div>
+            <div class="header__link">
+              <a class="header__text header_none" id="save_page" href="./save_page.html">Сохранённые статьи</a>
+            </div>
             <button type="submit" class="header__signin" id="login">Авторизоваться</button>
             <button type="submit" class="header__signin header_none" id="logout"></button>
           </div>
@@ -42,6 +46,7 @@
         <p class="results__title">Результаты поиска</p>
         <div class="results__container">
 
+
           <template class="template">
             <div class="card">
               <img class="card__image">
@@ -49,6 +54,7 @@
                 <p class="card__signin_text" >Войдите, чтобы сохранять статьи</p>
               </div>
               <button class="card__flag"></button>
+              <button class="card__delete card_none"></button>
               <div class="card__container">
                 <h3 class="card__date"></h3>
                 <h1 class="card__title"></h1>

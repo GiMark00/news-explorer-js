@@ -6,8 +6,8 @@ export default class NewsCardList {
     this.createCardFunction = createCardFunction;
   }
 
-  addCard(date, title, text, source, link) {
-    const card = this.createCardFunction(date, title, text, source, link);
+  addCard(date, title, text, source, imageLink, cardUrl, cardID) {
+    const card = this.createCardFunction(date, title, text, source, imageLink, cardUrl, cardID);
     this.container.appendChild(card);
   }
 
@@ -19,13 +19,13 @@ export default class NewsCardList {
     this.renderLoader();
     this.api.getNews(words)
     .then((res)=>{
-      console.log(res.articles.length);
+      console.log(res)
       if (res.articles.length === 0){
         this.renderLoader();
         this.addNotFound();
       } else {
         res.articles.forEach((source) => {
-          this.addCard(source.publishedAt, source.title, source.description, source.source.name, source.urlToImage)
+          this.addCard(source.publishedAt, source.title, source.description, source.source.name, source.urlToImage, source.url, "")
         })
         this.renderLoader();
         this.addContainer();
@@ -33,6 +33,19 @@ export default class NewsCardList {
     })
     .catch(err => {
       this.renderLoader();
+      console.log(err)
+    })
+  }
+
+
+  renderSaveResults(){
+    this.api.getArticle()
+    .then((res)=>{
+        res.data.forEach((source) => {
+          this.addCard(source.date, source.title, source.text, source.source, source.image, source.link, source._id)
+        })
+    })
+    .catch(err => {
       console.log(err)
     })
   }

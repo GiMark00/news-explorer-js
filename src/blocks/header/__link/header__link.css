@@ -1,0 +1,17 @@
+.header__link {
+    height: 100%;
+    width: auto;
+    justify-content: center;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 10px;
+
+}
+
+@media screen and (min-width: 310px) and (max-width: 760px) {
+  .header__text {
+      display: none;
+  }
+}
