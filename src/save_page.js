@@ -7,6 +7,7 @@ import MainApi from "./js/api/MainApi";
 
 const saveList = document.querySelector('#saved_container');
 const saveHeader = document.querySelector('#header_save');
+const saveTitle = document.querySelector('.saved-cards__title');
 const template = document.querySelector('.template_save').content;
 
 const userApi = new MainApi({
@@ -29,5 +30,5 @@ const createCard = (date, title, text, source, imageLink, cardUrl, cardID) => {
 const saveNewsList = new NewsCardList(saveList, userApi, createCard);
 
 saveNewsList.renderSaveResults();
-saveHeader.textContent = `${localStorage.getItem('name')} [->`
-
+saveHeader.textContent = `${localStorage.getItem('name')} [->`;
+saveTitle.textContent = `${localStorage.getItem('name')}, у вас ${saveList.childElementCount} сохранённых статей`;
