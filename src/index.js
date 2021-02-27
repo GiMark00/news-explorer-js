@@ -64,8 +64,8 @@ const popupSuccess = new Popup(popupSuccessWindow,'popup_is-opened');
 
 
 
-const createCard = (date, title, text, source, link, url, id) => {
-  const newsCard = new NewsCard(date, title, text, source, link, url, id, template, userApi);
+const createCard = (date, title, text, source, link, url, id, key) => {
+  const newsCard = new NewsCard(date, title, text, source, link, url, id, key, template, userApi);
   return newsCard.renderIcon();
 }
 
@@ -81,6 +81,7 @@ sendFormRegistration.setEventListeners();
 
 signinEmailUser.addEventListener('input', sendFormSignin.setEventListenersSignin);
 signinPasswordUser.addEventListener('input', sendFormSignin.setEventListenersSignin);
+sendFormSignin.setEventListeners();
 
 
 popupRegistrationLink.addEventListener("click",() => {
@@ -119,10 +120,10 @@ formRegistration.addEventListener("submit", (event) => {
     event.preventDefault();
     userApi.signup(inputEmailUser.value, inputPasswordUser.value, inputNameUser.value)
       .then((res) => {
+        popupRegistration.close();
+        popupSuccess.open();
+        return res;
 
-          popupRegistration.close();
-          popupSuccess.open();
-          return res;
       })
       .catch((err) => console.log(err))
 
@@ -136,8 +137,8 @@ formSignin.addEventListener("submit", (event) => {
         localStorage.setItem('token', res.message);
         popupSignin.close();
         userApi.getUserData()
-        .then((data) => {
-          userApi.changePage(data)
+        .then((res) => {
+          userApi.changePage(res)
         })
 
     })

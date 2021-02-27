@@ -50,8 +50,9 @@
           <template class="template">
             <div class="card">
               <img class="card__image">
-              <div class="card__signin card_none">
+              <div class="card__signin">
                 <p class="card__signin_text" >Войдите, чтобы сохранять статьи</p>
+                <p class="card__signin_text card_none" id='card_keyword'>Войдите, чтобы сохранять статьи</p>
               </div>
               <button class="card__flag"></button>
               <button class="card__delete card_none"></button>
@@ -106,11 +107,11 @@
       <h3 class="popup__title">Вход</h3>
       <form class="popup__form" name="signin" novalidate>
           <p class="popup__text">Email</p>
-          <input type="text" name="email" id="signin__email" class="popup__input popup__input_type_name" placeholder="Введите почту" minlength="2" maxlength="30" required>
-          <span class="popup__valid" id="email_valid"></span>
+          <input type="email" name="email" id="signin__email" class="popup__input popup__input_type_name" placeholder="Введите почту" minlength="2" maxlength="30" required>
+          <span class="popup__valid" id="signin__email__valid"></span>
           <p class="popup__text">Пароль</p>
-          <input type="text" name="password" id="signin__password" class="popup__input popup__input_type_link-url" placeholder="Введите пароль" required>
-          <span class="popup__valid" id="password_valid"></span>
+          <input type="password" name="password" id="signin__password" class="popup__input popup__input_type_link-url" placeholder="Введите пароль" required>
+          <span class="popup__valid" id="signin__password__valid"></span>
           <button type="submit" class="popup__button" id="signin_button">Войти</button>
           <p class="popup__registration">или <a href="#" id="registration_link">Зарегистрироваться</a></p>
       </form>
@@ -126,7 +127,7 @@
           <input type="email" name="email" id="signup__email" class="popup__input popup__input_type_name" placeholder="Введите почту" minlength="2" maxlength="30" required>
           <span class="popup__valid" id="signup__email__valid"></span>
           <p class="popup__text">Пароль</p>
-          <input type="text" name="password" id="signup__password" class="popup__input popup__input_type_link-url" placeholder="Введите пароль" required>
+          <input type="password" name="password" id="signup__password" class="popup__input popup__input_type_link-url" placeholder="Введите пароль" required>
           <span class="popup__valid" id="signup__password__valid"></span>
           <p class="popup__text">Имя</p>
           <input type="text" name="name" id="signup__name" class="popup__input popup__input_type_link-url" placeholder="Введите своё имя" required>

@@ -8,7 +8,7 @@ export default class NewsApi {
 
 
   getNews(words){
-    return fetch(`${this.url}v2/everything?q=${words}&from=${this.from}&sortBy=publishedAt&apiKey=${this.apiKey}&pageSize=${this.pageSize}`, {
+    return fetch(`${this.url}v2/everything?q=${words}&from=${this.from}&sortBy=publishedAt&apiKey=${this.apiKey}&pageSize=${this.pageSize}&page=1`, {
       method: 'GET',
       Authorization: {
         'Content-type': 'application/json',
@@ -16,11 +16,10 @@ export default class NewsApi {
       },
     })
     .then((news) => {
-      return news.json();
+      if (news.ok){
+        return news.json();
+      }
     })
-    .catch(error => {
-      console.log(error);
-    });
   }
 
 }

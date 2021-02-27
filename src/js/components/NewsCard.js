@@ -1,6 +1,6 @@
 export default class NewsCard {
 
-  constructor(date, title, text, source, imageLink, cardUrl, cardId, template, api) {
+  constructor(date, title, text, source, imageLink, cardUrl, cardId, keyword, template, api) {
     this.title = title;
     this.imageLink = imageLink;
     this.text = text;
@@ -8,6 +8,7 @@ export default class NewsCard {
     this.source = source;
     this.cardUrl = cardUrl;
     this.cardId = cardId;
+    this.cardKeyword = keyword;
 
     this.template = template;
     this.api = api;
@@ -22,11 +23,13 @@ export default class NewsCard {
     const cardText = card.querySelector('.card__text');
     const cardDate = card.querySelector('.card__date');
     const cardSource = card.querySelector('.card__source');
+    const cardKeyword = card.querySelector('#card_keyword');
 
     cardTitle.textContent = this.title;
     cardText.textContent = this.text;
     cardDate.textContent = this.date;
     cardSource.textContent = this.source;
+    cardKeyword.textContent = this.cardKeyword;
     cardImage.src = this.imageLink;
     cardTitle.id = this.cardId;
 
@@ -57,7 +60,7 @@ export default class NewsCard {
     if (localStorage.getItem('email') != "" && localStorage.getItem('password') != "") {
       event.target.classList.toggle('card__flag_blue');
       this.api.createArticle(
-        this.cardElement.querySelector('.card__text').textContent,
+        this.cardElement.querySelector('#card_keyword').textContent,
         this.cardElement.querySelector('.card__title').textContent,
         this.cardElement.querySelector('.card__text').textContent,
         this.cardElement.querySelector('.card__date').textContent,
@@ -68,6 +71,7 @@ export default class NewsCard {
 
     }
   }
+
 
   cardDelete = () => {
     if (localStorage.getItem('email') != "" && localStorage.getItem('password') != "") {

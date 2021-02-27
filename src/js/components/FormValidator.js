@@ -47,11 +47,11 @@ export default class FormValidator {
             const inputForValidation = event.target;
             this.isFieldValid(inputForValidation);
 
-            // if (inputs.every((input) => input.validity.valid)) {
-            //     this.setSubmitButtonState(true);
-            // } else {
-            //     this.setSubmitButtonState(false);
-            // }
+            if (inputs.every((input) => input.validity.valid)) {
+                this.setSubmitButtonState(true);
+            } else {
+                this.setSubmitButtonState(false);
+            }
         });
     }
 

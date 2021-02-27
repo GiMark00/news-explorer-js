@@ -18,10 +18,9 @@ export default class MainApi {
       })
     })
     .then((res) => {
-      return res.json();
-    })
-    .catch((err) => {
-      return err.message;
+      if(res.ok){
+        return res.json();
+      }
     })
   }
 
@@ -41,10 +40,9 @@ export default class MainApi {
       if(res.ok){
           localStorage.setItem('email', email);
           localStorage.setItem('password', password);
+          return res.json();
         }
-      return res.json();
     })
-    .catch(err => console.log(err))
   }
 
   getUserData(){
@@ -57,9 +55,10 @@ export default class MainApi {
       }
     })
     .then((res) => {
-      return res.json();
+      if(res.ok){
+        return res.json();
+      }
     })
-    .catch(err => console.log(err))
   }
 
   autoSignin(){
@@ -72,7 +71,6 @@ export default class MainApi {
             this.changePage(data)
           })
         })
-        .catch(err => console.log(err))
       }
   }
 
@@ -109,9 +107,10 @@ export default class MainApi {
       })
     })
     .then((res) => {
-      return res.json();
+      if(res.ok){
+        return res.json();
+      }
     })
-    .catch(err => console.log(err))
   }
 
   getArticle(){
@@ -124,9 +123,10 @@ export default class MainApi {
       },
     })
     .then((res) => {
-      return res.json();
+      if(res.ok){
+        return res.json();
+      }
     })
-    .catch(err => console.log(err))
   }
 
   removeArticle(id){
@@ -139,9 +139,10 @@ export default class MainApi {
       },
     })
     .then((res) => {
-      return res.json();
+      if(res.ok){
+        return res.json();
+      }
     })
-    .catch(err => console.log(err))
   }
 
 }
