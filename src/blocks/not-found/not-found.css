@@ -11,6 +11,8 @@
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
+}
 
-    display: none;
+.not-found_none{
+  display: none;
 }

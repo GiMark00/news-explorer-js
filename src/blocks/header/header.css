@@ -7,6 +7,7 @@
 @import url(__main/header__main.css);
 @import url(_black/header_black.css);
 @import url(_line/header_line.css);
+@import url(__link/header__link.css);
 
 .header {
   height: auto;

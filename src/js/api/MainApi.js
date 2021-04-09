@@ -18,10 +18,9 @@ export default class MainApi {
       })
     })
     .then((res) => {
-      return res.json();
-    })
-    .catch((err) => {
-      return err.message;
+      if(res.ok){
+        return res.json();
+      }
     })
   }
 
@@ -41,10 +40,11 @@ export default class MainApi {
       if(res.ok){
           localStorage.setItem('email', email);
           localStorage.setItem('password', password);
+          return res.json();
+        } else {
+          return Promise.reject(Error(res.status));
         }
-      return res.json();
     })
-    .catch(err => console.log(err))
   }
 
   getUserData(){
@@ -57,9 +57,10 @@ export default class MainApi {
       }
     })
     .then((res) => {
-      return res.json();
+      if(res.ok){
+        return res.json();
+      }
     })
-    .catch(err => console.log(err))
   }
 
   autoSignin(){
@@ -72,74 +73,78 @@ export default class MainApi {
             this.changePage(data)
           })
         })
-        .catch(err => console.log(err))
       }
   }
 
   changePage(data){
     const loginButton = document.querySelector('#login');
     const logoutButton = document.querySelector('#logout');
-    const savedPage = document.querySelector('#saved_page');
+    const savedPage = document.querySelector('#save_page');
+    localStorage.setItem('name', data.data.name)
 
-    logoutButton.textContent = `${data.data.name} [->`;
+
+    logoutButton.textContent = `${localStorage.getItem('name')} [->`;
     savedPage.classList.toggle('header_none');
     loginButton.classList.toggle('header_none');
     logoutButton.classList.toggle('header_none');
   }
 
 
-  getArticles (email, password){
+  createArticle (keyword, title, text, date, source, link, image){
+    return fetch(`${this.url}/articles`, {
+      credentials: 'include',
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      },
+      body: JSON.stringify({
+        keyword: keyword,
+        title: title,
+        text: text,
+        date: date,
+        source: source,
+        link: link,
+        image: image
+      })
+    })
+    .then((res) => {
+      if(res.ok){
+        return res.json();
+      }
+    })
+  }
+
+  getArticle(){
     return fetch(`${this.url}/articles`, {
       credentials: 'include',
       method: 'GET',
       headers: {
-        'Content-type': 'application/json'
+        'Content-type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
       },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      })
     })
     .then((res) => {
-      return res.json();
+      if(res.ok){
+        return res.json();
+      }
     })
-    .catch(err => console.log(err))
   }
 
-  createArticle (email, password){
-    return fetch(`${this.url}/signin`, {
+  removeArticle(id){
+    return fetch(`${this.url}/articles/${id}`, {
       credentials: 'include',
-      method: 'POST',
+      method: 'DELETE',
       headers: {
-        'Content-type': 'application/json'
+        'Content-type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
       },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      })
     })
     .then((res) => {
-      return res.json();
+      if(res.ok){
+        return res.json();
+      }
     })
-    .catch(err => console.log(err))
-  }
-
-  removeArticle (email, password){
-    return fetch(`${this.url}/signin`, {
-      credentials: 'include',
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      })
-    })
-    .then((res) => {
-      return res.json();
-    })
-    .catch(err => console.log(err))
   }
 
 }

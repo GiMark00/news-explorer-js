@@ -15,8 +15,12 @@
         <div class="header__content">
           <h1 class="header__text_head">NewsExplorer</h1>
           <div class="header__container">
-            <button class="header__text header_line" id="main_page">Главная</button>
-            <button class="header__text header_none" id="saved_page">Сохранённые статьи</button>
+            <div class="header__link header_line">
+              <a class="header__text" id="main_page" href="./index.html">Главная</a>
+            </div>
+            <div class="header__link">
+              <a class="header__text header_none" id="save_page" href="./save_page.html">Сохранённые статьи</a>
+            </div>
             <button type="submit" class="header__signin" id="login">Авторизоваться</button>
             <button type="submit" class="header__signin header_none" id="logout"></button>
           </div>
@@ -42,24 +46,16 @@
         <p class="results__title">Результаты поиска</p>
         <div class="results__container">
 
-          <!-- <div class="card">
-            <img class="card__image" src="<%=require('./images/georgia.jpg')%>" alt="georgia.jpg">
-            <button class="card__flag"></button>
-            <div class="card__container">
-              <h3 class="card__date">2 августа, 2019</h3>
-              <h1 class="card__title">Национальное достояние – парки</h1>
-              <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-              <p class="card__source">Лента.ру</p>
-            </div>
-          </div> -->
 
           <template class="template">
             <div class="card">
               <img class="card__image">
-              <div class="card__signin card_none">
+              <div class="card__signin">
                 <p class="card__signin_text" >Войдите, чтобы сохранять статьи</p>
+                <p class="card__signin_text card_none" id='card_keyword'>Войдите, чтобы сохранять статьи</p>
               </div>
               <button class="card__flag"></button>
+              <button class="card__delete card_none"></button>
               <div class="card__container">
                 <h3 class="card__date"></h3>
                 <h1 class="card__title"></h1>
@@ -78,7 +74,7 @@
       <i class="preloader__circle"></i>
     </div>
 
-    <div class="not-found">
+    <div class="not-found not-found_none">
       <h3 class="not-found__title">Ничего не найдено</h3>
       <p class="not-found__text">К сожалению по вашему запросу ничего не найдено.</p>
     </div>
@@ -111,11 +107,11 @@
       <h3 class="popup__title">Вход</h3>
       <form class="popup__form" name="signin" novalidate>
           <p class="popup__text">Email</p>
-          <input type="text" name="email" id="signin__email" class="popup__input popup__input_type_name" placeholder="Введите почту" minlength="2" maxlength="30" required>
-          <span class="popup__valid" id="email_valid"></span>
+          <input type="email" name="email" id="signin__email" class="popup__input popup__input_type_name" placeholder="Введите почту" minlength="2" maxlength="30" required>
+          <span class="popup__valid" id="signin__email__valid"></span>
           <p class="popup__text">Пароль</p>
-          <input type="text" name="password" id="signin__password" class="popup__input popup__input_type_link-url" placeholder="Введите пароль" required>
-          <span class="popup__valid" id="password_valid"></span>
+          <input type="password" name="password" id="signin__password" class="popup__input popup__input_type_link-url" placeholder="Введите пароль" required>
+          <span class="popup__valid" id="signin__password__valid"></span>
           <button type="submit" class="popup__button" id="signin_button">Войти</button>
           <p class="popup__registration">или <a href="#" id="registration_link">Зарегистрироваться</a></p>
       </form>
@@ -131,7 +127,7 @@
           <input type="email" name="email" id="signup__email" class="popup__input popup__input_type_name" placeholder="Введите почту" minlength="2" maxlength="30" required>
           <span class="popup__valid" id="signup__email__valid"></span>
           <p class="popup__text">Пароль</p>
-          <input type="text" name="password" id="signup__password" class="popup__input popup__input_type_link-url" placeholder="Введите пароль" required>
+          <input type="password" name="password" id="signup__password" class="popup__input popup__input_type_link-url" placeholder="Введите пароль" required>
           <span class="popup__valid" id="signup__password__valid"></span>
           <p class="popup__text">Имя</p>
           <input type="text" name="name" id="signup__name" class="popup__input popup__input_type_link-url" placeholder="Введите своё имя" required>

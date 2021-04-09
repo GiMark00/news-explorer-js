@@ -1,7 +1,9 @@
-var today = new Date();
-var dd = String(today.getDate()).padStart(2, '0');
-var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-var yyyy = today.getFullYear();
+let date = new Date();
+let dd = String(date.getDate()).padStart(2, '0');
+let mm = String(date.getMonth() + 1).padStart(2, '0');
+let yyyy = date.getFullYear();
 
-today = mm + '/' + dd + '/' + yyyy;
-document.write(today);
+let today = yyyy + '-' + mm + '-' + dd;
+let from = yyyy + '-' + mm + '-' + (dd - 7);
+
+export default from;

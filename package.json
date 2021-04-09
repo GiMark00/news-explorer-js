@@ -1,5 +1,5 @@
 {
-  "name": "news-explorer-frontend",
+  "name": "news-explorer-js",
   "version": "1.0.0",
   "description": "none",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GiMark00/news-explorer-frontend.git.git"
+    "url": "git+https://github.com/GiMark00/news-explorer-js.git.git"
   },
   "author": "GiMark",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/GiMark00/news-explorer-frontend.git/issues"
+    "url": "https://github.com/GiMark00/news-explorer-js.git/issues"
   },
-  "homepage": "https://github.com/GiMark00/news-explorer-frontend.git",
+  "homepage": "https://github.com/GiMark00/news-explorer-js.git",
   "devDependencies": {
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
