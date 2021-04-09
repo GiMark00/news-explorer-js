@@ -41,6 +41,8 @@ export default class MainApi {
           localStorage.setItem('email', email);
           localStorage.setItem('password', password);
           return res.json();
+        } else {
+          return Promise.reject(Error(res.status));
         }
     })
   }
